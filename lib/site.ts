@@ -57,9 +57,9 @@ export const SITE: SiteConfig = {
     // Working name taken from the supplied logo and mission document. Replace when the final name is confirmed.
     name: "Luna Health Technologies",
     shortName: "Luna Health",
-    logo: "assets/logo.png",
-    logoReversed: "assets/logo-reversed.png",
-    mark: "assets/mark.png",
+    logo: "/assets/logo.png",
+    logoReversed: "/assets/logo-reversed.png",
+    mark: "/assets/mark.png",
     mantra: "Lighting the Way to Better Health",
     mission: "We design and build evidence-based, human-centred digital solutions that improve access to quality maternal, child, sexual, reproductive and primary healthcare across Africa.",
   },

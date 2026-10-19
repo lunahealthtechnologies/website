@@ -1,0 +1,5 @@
+.card { color: inherit; text-decoration: none; }
+.card:hover { color: inherit; border-color: #0FA89A; }
+.chip { min-height: 40px; padding: 0 14px; border-radius: 999px; font: 600 13px/1 var(--fh); cursor: pointer; border: 1.5px solid #D5EBE6; background: #FFFFFF; color: #073E38; }
+.chip:hover { border-color: #0A6B62; }
+.chipOn, .chipOn:hover { border-color: #073E38; background: #073E38; color: #FFFFFF; }

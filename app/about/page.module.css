@@ -1,0 +1,4 @@
+.primary { display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; background: #0A6B62; color: #FFFFFF; border-radius: 999px; font: 600 16px/1 var(--fh); text-decoration: none; }
+.primary:hover { background: #073E38; color: #FFFFFF; }
+.outline { display: inline-flex; align-items: center; min-height: 52px; padding: 0 22px; border: 1.5px solid #0A6B62; border-radius: 999px; color: #0A6B62; font: 600 16px/1 var(--fh); text-decoration: none; }
+.outline:hover { background: #E9F5F2; color: #0A6B62; }
