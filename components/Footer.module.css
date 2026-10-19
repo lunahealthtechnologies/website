@@ -1,0 +1,33 @@
+.footer {
+  margin: clamp(12px,2vw,24px); border-radius: 32px; overflow: hidden;
+  background: rgba(7,62,56,0.94);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(127,232,220,0.25);
+  box-shadow: inset 0 1px 0 rgba(127,232,220,0.25);
+  color: var(--c-tint); font-family: var(--fb);
+}
+.inner { padding-top: 72px; padding-bottom: 32px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,200px),1fr)); gap: 40px 32px; }
+.brand { grid-column: span 2; min-width: 0; max-width: 420px; }
+@media (max-width: 480px) { .brand { grid-column: auto; } }
+.brand img { display: block; width: 110px; height: 68px; object-fit: contain; }
+.mission { margin: 24px 0 0; font-size: 16px; line-height: 1.6; color: var(--c-line); text-wrap: pretty; }
+.mantra { margin: 20px 0 0; font: 600 14px/1.4 var(--fh); color: var(--c-mint); }
+.colTitle { margin: 0 0 16px; font: 700 12px/1 var(--fh); letter-spacing: .12em; text-transform: uppercase; color: var(--c-mint); }
+.colList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+.colList a { color: var(--c-tint); text-decoration: none; }
+.colList a:hover { color: var(--c-tint); text-decoration: underline; }
+.contact {
+  margin-top: 48px; padding: 20px 24px; border: 1px solid rgba(127,232,220,0.25); border-radius: 12px;
+  display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: center; justify-content: space-between;
+}
+.contact p { margin: 0; font-size: 15px; }
+.contact a { color: var(--c-mint); font-weight: 600; }
+.social { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; }
+.legal {
+  margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(213,235,230,0.18);
+  display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; font-size: 14px; color: var(--c-line);
+}
+.legal p { margin: 0; }
+.legalLinks { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 20px; }
+.legalLinks a { color: var(--c-tint); }

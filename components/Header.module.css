@@ -1,0 +1,82 @@
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(250,250,247,0.55);
+  backdrop-filter: saturate(1.6) blur(24px); -webkit-backdrop-filter: saturate(1.6) blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,0.75);
+  box-shadow: 0 1px 0 rgba(7,62,56,0.06);
+  font-family: var(--fb);
+}
+.skip {
+  position: absolute; left: 16px; top: -48px; z-index: 60;
+  background: var(--c-deep); color: #fff; padding: 10px 16px; border-radius: 6px;
+  font-weight: 600; text-decoration: none;
+}
+.skip:focus { top: 12px; color: #fff; }
+.bar { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.logo { display: flex; align-items: center; flex-shrink: 0; border-radius: 6px; }
+.logo img { display: block; width: 74px; height: 46px; object-fit: contain; }
+
+.nav { display: flex; align-items: center; gap: 4px; }
+.navItem {
+  position: relative; display: flex; align-items: center; gap: 6px;
+  background: none; border: 0; padding: 10px 14px; border-radius: 8px;
+  font: 600 15px/1 var(--fh); color: var(--c-ink); text-decoration: none; cursor: pointer;
+}
+.navItem:hover { background: var(--c-tint); color: var(--c-ink); }
+.caret { font-size: 10px; color: var(--c-brand); }
+.activeBar { position: absolute; left: 14px; right: 14px; bottom: 2px; height: 2px; background: var(--c-bright); border-radius: 2px; }
+
+.actions { display: flex; align-items: center; gap: 10px; }
+.cta {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px;
+  background: var(--c-brand); color: #fff; border-radius: 999px;
+  font: 600 14px/1 var(--fh); text-decoration: none; white-space: nowrap;
+}
+.cta:hover { background: var(--c-deep); color: #fff; }
+
+.burger {
+  width: 44px; height: 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  border-radius: 10px; cursor: pointer;
+}
+.burger span { display: block; width: 18px; height: 2px; background: var(--c-ink); border-radius: 2px; }
+
+.desktopOnly { display: flex; }
+.mobileOnly { display: none; }
+@media (max-width: 999.98px) {
+  .desktopOnly { display: none; }
+  .mobileOnly { display: flex; }
+}
+
+.mega {
+  position: absolute; left: 0; right: 0; top: 76px;
+  background: rgba(255,255,255,0.95); border-bottom: 1px solid rgba(255,255,255,0.9);
+  box-shadow: 0 24px 48px rgba(7,62,56,0.12);
+}
+.megaInner {
+  padding-top: 32px; padding-bottom: 36px;
+  display: grid; grid-template-columns: minmax(220px,1fr) 3fr; gap: 40px;
+}
+.megaLabel { margin: 0 0 8px; font: 700 12px/1 var(--fh); letter-spacing: .12em; text-transform: uppercase; color: var(--c-brand); }
+.megaIntro { margin: 0 0 16px; font-size: 16px; line-height: 1.5; color: var(--c-muted); }
+.megaAll { font-weight: 600; color: var(--c-brand); }
+.megaList { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 4px 24px; }
+.megaLink { display: block; padding: 10px 12px; border-radius: 8px; color: var(--c-ink); text-decoration: none; font-weight: 600; }
+.megaLink:hover { background: var(--c-tint); color: var(--c-ink); }
+.megaLinkMuted { color: var(--c-muted); }
+
+.mobile {
+  position: absolute; left: 0; right: 0; top: 76px; height: calc(100vh - 76px); overflow-y: auto;
+  background: rgba(250,250,247,0.97); border-top: 1px solid rgba(255,255,255,0.8);
+  padding: 16px var(--gutter) 40px;
+}
+.mobileList { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.mobileLink {
+  display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid var(--c-line);
+  font: 600 20px/1.2 var(--fh); color: var(--c-ink); text-decoration: none;
+}
+.mobileLabel { margin: 28px 0 12px; font: 700 12px/1 var(--fh); letter-spacing: .12em; text-transform: uppercase; color: var(--c-brand); }
+.mobileCtas { display: flex; flex-direction: column; gap: 10px; }
+.mobileCta {
+  display: flex; align-items: center; min-height: 48px; padding: 0 16px; border-radius: 10px;
+  color: var(--c-ink); font-weight: 600; text-decoration: none;
+}
