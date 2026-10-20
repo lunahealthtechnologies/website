@@ -63,6 +63,7 @@
 .megaLink { display: block; padding: 10px 12px; border-radius: 8px; color: var(--c-ink); text-decoration: none; font-weight: 600; }
 .megaLink:hover { background: var(--c-tint); color: var(--c-ink); }
 .megaLinkMuted { color: var(--c-muted); }
+.megaLinkNoClick { display: block; padding: 10px 12px; border-radius: 8px; color: var(--c-ink); text-decoration: none; font-weight: 600; }
 
 .mobile {
   position: absolute; left: 0; right: 0; top: 76px; height: calc(100vh - 76px); overflow-y: auto;
