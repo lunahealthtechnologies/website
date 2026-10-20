@@ -99,7 +99,7 @@ export const SITE: SiteConfig = {
   // Product categories. `status` stays "focus" until a specific product and its status are confirmed by the company.
   products: [
     {
-      id: "consumer", group: "People and families", name: "Consumer and patient apps", status: "focus",
+      id: "consumer", group: "People and families", name: "Consumer and patient apps: Obaa", status: "focus",
       audience: "Women, families and individuals managing their health",
       problem: "Reliable, relevant health information is hard to find, and it is easy to lose track of appointments and next steps.",
       benefit: "Clear, trustworthy guidance and reminders in the user's pocket.",
