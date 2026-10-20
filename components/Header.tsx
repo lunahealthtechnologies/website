@@ -74,24 +74,58 @@ export default function Header() {
 
   return (
     <header ref={ref} className={s.header}>
-      <a href="#main" className={s.skip}>Skip to content</a>
+      <a href="#main" className={s.skip}>
+        Skip to content
+      </a>
       <div className={`container ${s.bar}`}>
-        <Link href="/" aria-label={`${SITE.brand.name} home`} className={s.logo}>
+        <Link
+          href="/"
+          aria-label={`${SITE.brand.name} home`}
+          className={s.logo}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={SITE.brand.logo} alt={SITE.brand.name} width={74} height={46} />
+          <img
+            src={SITE.brand.logo}
+            alt={SITE.brand.name}
+            width={74}
+            height={46}
+          />
         </Link>
 
         <nav aria-label="Primary" className={`${s.nav} ${s.desktopOnly}`}>
-          <button type="button" aria-expanded={open === "sol"} aria-controls="menu-solutions" onClick={toggle("sol")} className={s.navItem}>
-            Solutions <span aria-hidden="true" className={s.caret}>▾</span>
+          <button
+            type="button"
+            aria-expanded={open === "sol"}
+            aria-controls="menu-solutions"
+            onClick={toggle("sol")}
+            className={s.navItem}
+          >
+            Solutions{" "}
+            <span aria-hidden="true" className={s.caret}>
+              ▾
+            </span>
             {bar(active === "solutions")}
           </button>
-          <button type="button" aria-expanded={open === "prod"} aria-controls="menu-products" onClick={toggle("prod")} className={s.navItem}>
-            Products <span aria-hidden="true" className={s.caret}>▾</span>
+          <button
+            type="button"
+            aria-expanded={open === "prod"}
+            aria-controls="menu-products"
+            onClick={toggle("prod")}
+            className={s.navItem}
+          >
+            Products{" "}
+            <span aria-hidden="true" className={s.caret}>
+              ▾
+            </span>
             {bar(active === "products")}
           </button>
           {(["about", "insights", "contact"] as const).map((k) => (
-            <Link key={k} href={`/${k}`} aria-current={active === k ? "page" : undefined} className={s.navItem}>
+            <Link
+              key={k}
+              href={`/${k}`}
+              aria-current={active === k ? "page" : undefined}
+              className={s.navItem}
+            >
               {k[0].toUpperCase() + k.slice(1)}
               {bar(active === k)}
             </Link>
@@ -99,7 +133,11 @@ export default function Header() {
         </nav>
 
         <div className={s.actions}>
-          <Link href="/contact" onClick={() => track("cta_click", { cta: "header_talk" })} className={s.cta}>
+          <Link
+            href="/contact"
+            onClick={() => track("cta_click", { cta: "header_talk" })}
+            className={s.cta}
+          >
             Talk to our team
           </Link>
           <button
@@ -122,12 +160,21 @@ export default function Header() {
           <div className={`container ${s.megaInner}`} style={{ width: "100%" }}>
             <div>
               <p className={s.megaLabel}>Solutions</p>
-              <p className={s.megaIntro}>Organised by the problems we work on, not the technology behind them.</p>
-              <Link href="/solutions" className={s.megaAll}>All solutions →</Link>
+              <p className={s.megaIntro}>
+                Organised by the problems we work on, not the technology behind
+                them.
+              </p>
+              <Link href="/solutions" className={s.megaAll}>
+                All solutions →
+              </Link>
             </div>
             <ul className={s.megaList}>
               {SOLUTION_LINKS.map((l) => (
-                <li key={l.href}><Link href={l.href} className={s.megaLink}>{l.label}</Link></li>
+                <li key={l.href}>
+                  <Link href={l.href} className={s.megaLink}>
+                    {l.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -139,15 +186,36 @@ export default function Header() {
           <div className={`container ${s.megaInner}`} style={{ width: "100%" }}>
             <div>
               <p className={s.megaLabel}>Products</p>
-              <p className={s.megaIntro}>The product areas we are building toward. Each is labelled with its current status.</p>
-              <Link href="/products" className={s.megaAll}>Product ecosystem →</Link>
+              <p className={s.megaIntro}>
+                The product areas we are building toward. Each is labelled with
+                its current status.
+              </p>
+              <Link href="/products" className={s.megaAll}>
+                Product ecosystem →
+              </Link>
             </div>
             <ul className={s.megaList}>
-              {PRODUCT_LINKS.map((l) => (
-                <li key={l.id}>
-                  <Link href={productHref(l.id)} className={`${s.megaLink} ${l.muted ? s.megaLinkMuted : ""}`}>{l.label}</Link>
-                </li>
-              ))}
+              {PRODUCT_LINKS.map((l) =>
+                l.id === "consumer" ? (
+                  <li key={l.id}>
+                    <Link
+                      href={productHref(l.id)}
+                      className={`${s.megaLink} ${l.muted ? s.megaLinkMuted : ""}`}
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ) : (
+                  <li key={l.id}>
+                    <div
+                      // href={productHref(l.id)}
+                      className={`${s.megaLinkNoClick} ${l.muted ? s.megaLinkMuted : ""}`}
+                    >
+                      {l.label}
+                    </div>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
         </div>
@@ -157,14 +225,33 @@ export default function Header() {
         <nav id="menu-mobile" aria-label="Mobile" className={s.mobile}>
           <ul className={s.mobileList}>
             {MOBILE_LINKS.map((l) => (
-              <li key={l.href}><Link href={l.href} className={s.mobileLink}>{l.label}</Link></li>
+              <li key={l.href}>
+                <Link href={l.href} className={s.mobileLink}>
+                  {l.label}
+                </Link>
+              </li>
             ))}
           </ul>
           <p className={s.mobileLabel}>Start a conversation</p>
           <div className={s.mobileCtas}>
-            <Link href={contactHref("facility")} className={`glass-soft ${s.mobileCta}`}>For hospitals and facilities</Link>
-            <Link href={contactHref("partnership")} className={`glass-soft ${s.mobileCta}`}>For partners and researchers</Link>
-            <Link href={contactHref("custom")} className={`glass-soft ${s.mobileCta}`}>Custom software projects</Link>
+            <Link
+              href={contactHref("facility")}
+              className={`glass-soft ${s.mobileCta}`}
+            >
+              For hospitals and facilities
+            </Link>
+            <Link
+              href={contactHref("partnership")}
+              className={`glass-soft ${s.mobileCta}`}
+            >
+              For partners and researchers
+            </Link>
+            <Link
+              href={contactHref("custom")}
+              className={`glass-soft ${s.mobileCta}`}
+            >
+              Custom software projects
+            </Link>
           </div>
         </nav>
       )}

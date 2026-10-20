@@ -5,22 +5,36 @@ import Footer from "@/components/Footer";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const heading = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--fh" });
-const body = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--fb" });
+const heading = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--fh",
+});
+const body = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--fb",
+});
 
 export const metadata: Metadata = {
-  title: { default: `Healthcare technology for Africa — ${SITE.brand.name}`, template: `%s — ${SITE.brand.name}` },
+  title: {
+    default: `LunaHealthTechnologies — ${SITE.brand.name}`,
+    template: `%s — ${SITE.brand.name}`,
+  },
   description:
     "We design and build software that makes healthcare easier to access, easier to deliver and better connected, starting with maternal, child, reproductive and primary care.",
   icons: { icon: SITE.brand.mark },
   openGraph: {
-    title: "Healthcare technology for Africa",
-    description: "Software for people, healthcare professionals and health facilities across Africa.",
+    title: "LunaHealthTechnologies",
+    description:
+      "Software for people, healthcare professionals and health facilities across Africa.",
     type: "website",
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
       <body>
